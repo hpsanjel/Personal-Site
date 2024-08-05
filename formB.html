@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Job Application Form</title>
+		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/css/select2.min.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-beta.1/js/select2.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.4/dist/full.css" rel="stylesheet" type="text/css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style type="text/css">
+			#jobForm {
+				background-color: #FAF9F6;
+			}
+		
+			#citizenship {
+				padding-top: 10px;
+				padding-bottom: 2px;
+				width: 90%;
+			}
+			#modal-container {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.5);
+				align-items: center;
+				justify-content: center;
+			}
+
+			#modal {
+				background: #fff;
+				padding: 30px;
+				border-radius: 8px;
+				max-width: 400px;
+				text-align: center;
+				position: relative;
+			}
+
+			#close-modal {
+				cursor: pointer;
+				color: red;
+				font-size: 20px;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+
+			
+		</style>
+	</head>
+	<body id="body">
+		<div class="bg-[#8A5A07]">
+			<div class="container mx-auto flex justify-between items-center px-30 md:px-60">
+				<img
+					src="data:image/png;base64,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"
+					alt=""
+					width="100px"
+				/>
+				<div class="hidden sm:flex space-x-4">
+					<a href="" class="text-white hover:bg-[#f8f8ff] hover:text-black p-4">Home</a>
+					<a href="" class="text-white hover:bg-[#f8f8ff] hover:text-black p-4">About</a>
+					<a href="" class="text-white hover:bg-[#f8f8ff] hover:text-black p-4">Services</a>
+					<a href="" class="text-white hover:bg-[#f8f8ff] hover:text-black p-4">Contact</a>
+				</div>
+				<div class="sm:hidden">
+					<button id="menuBtn" class="text-white">
+					    					        <span class="sr-only">Button</span>
+
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Menu -->
+		<div id="mobileMenu" class="sm:hidden bg-[#8A5A07]">
+			<a href="" class="block text-white p-4 hover:bg-[#004996]">Home</a>
+			<a href="" class="block text-white p-4 hover:bg-[#004996]">About</a>
+			<a href="" class="block text-white p-4 hover:bg-[#004996]">Services</a>
+			<a href="" class="block text-white p-4 hover:bg-[#004996]">Contact</a>
+		</div>
+
+		<div class="flex flex-col container mx-auto py-8">
+			<!-- <h1 class="text-3xl font-bold mb-4 text-white">Accessible Form</h1> -->
+			<form id="jobForm" class="max-w-md mx-auto p-6 rounded shadow-lg" novalidate>
+				<div class="heading flex flex-col text-center p-5 mb-5 font-bold text-gray-600 gap-1 border-2 border-bottom bg-white">
+					<h1 class="block text-3xl">Job Application Form</h1>
+					<h2 class="block text-sm m-1 p-1">Fill in the form with the details provided to you in a sheet of paper to apply for the job.</h2>
+					<div class="flex pt-4 justify-between items-center text-sm">
+						<div>Position: <br />Data Analyst</div>
+						<div>Deadline: <br />24. oct 2023</div>
+					</div>
+				</div>
+
+				<div class="mb-5">
+					<div class="FullName">
+						<label for="fname" class="text-sm font-medium text-gray-700">Full Name:<span class="text-red-700">*</span></label>
+						<input type="text" id="fname" name="fname" required aria-label="Full Name" autocomplete="off" class="mt-1 p-2 w-full rounded border border-gray-300" />
+						<div id="fname_error" class="text-xs text-red-700"><span></span></div>
+					</div>
+				</div>
+
+				<div class="mb-5">
+					<label for="email" class="block text-sm font-medium text-gray-700">Email:<span class="text-red-700">*</span></label>
+					<input type="email" id="email" name="email" required aria-label="Email" autocomplete="off" class="mt-1 p-2 w-full rounded border border-gray-300" />
+					<div id="email_error" class="text-xs text-red-700"><span></span></div>
+				</div>
+
+				<div class="mb-5">
+					<label for="contact" class="block text-sm font-medium text-gray-700">Contact Number:<span class="text-red-700">*</span></label>
+					<input type="tel" id="contact" name="contact" maxlength="10" required inputmode="tel" autocomplete="off" aria-label="Contact Number" class="mt-1 p-2 w-full rounded border border-gray-300" />
+					<div id="contact_error" class="text-xs text-red-700"><span></span></div>
+				</div>
+
+				<div class="mb-5">
+				    <fieldset>
+					<legend>Gender:</legend>
+					<div class="mt-2 space-x-2">
+						<input type="radio" id="male" name="gender" value="male" aria-label="Male" required />
+						<label for="male" class="text-sm font-medium text-gray-700">Male</label>
+						<input type="radio" id="female" name="gender" value="female" aria-label="Female" required />
+						<label for="female" class="text-sm font-medium text-gray-700">Female</label>
+						<input type="radio" id="other" name="gender" value="other" aria-label="Other" required />
+						<label for="other" class="text-sm font-medium text-gray-700">Other</label>
+					</div>
+					<div id="gender_error" class="text-xs text-red-700"><span></span></div>
+					</fieldset>
+				</div>
+
+				<p class="text-sm font-medium text-gray-700">Birthday:</p>
+				<div class="mb-5 flex space-x-4">
+					<!-- Day -->
+					<div>
+						<label for="day" class="sr-only text-sm font-medium text-gray-700">Day</label>
+						<select id="day" name="day" class="mt-1 block w-20 py-2 px-3 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+							<option value="">Day</option>
+							<script>
+								for (let i = 1; i <= 32; i++) {
+									document.write(`<option value="${i}">${i}</option>`);
+								}
+							</script>
+						</select>
+					</div>
+
+					<!-- Month -->
+					<div>
+						<label for="month" class="sr-only text-sm font-medium text-gray-700">Month</label>
+						<select id="month" name="month" class="mt-1 block w-32 py-2 px-3 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+							<option value="">Month</option>
+							<script>
+								const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+								for (let i = 0; i < months.length; i++) {
+									document.write(`<option value="${months[i]}">${months[i]}</option>`);
+								}
+							</script>
+						</select>
+					</div>
+
+					<!-- Year -->
+					<div>
+						<label for="year" class="sr-only text-sm font-medium text-gray-700">Year</label>
+						<select id="year" name="year" class="mt-1 block w-28 py-2 px-3 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+							<option value="">Year</option>
+							<!-- Generate options for years 1923-2023 -->
+							<script>
+								for (let i = 2005; i >= 1923; i--) {
+									document.write(`<option value="${i}">${i}</option>`);
+								}
+							</script>
+						</select>
+					</div>
+				</div>
+
+				<div class="mb-5">
+					<div class="citizenship">
+						<label for="citizenship" class="text-sm font-medium text-gray-700">Citizenship:</label>
+						<select id="citizenship" name="your_citizenship" required></select>
+						<div id="citizenship_error" class="text-xs text-red-700"><span></span></div>
+					</div>
+				</div>
+
+				<div class="mb-5">
+					<label for="message" class="block text-sm font-medium text-gray-700">Why are you motivated for this position?</label>
+					<textarea id="message" name="message" rows="4" onkeyup="countCharacters()" autocomplete="off" placeholder="Write a motivation letter here" aria-label="Motivation Letter Typing" class="mt-1 p-2 w-full rounded border border-gray-300"></textarea>
+					<p class="text-xs"><span id="charCount">500 characters allowed</span></p>
+				</div>
+
+				<fieldset class="border border-blue-20 p-5 mb-5">
+					<legend>Upload your CV <span class="text-red-700">*</span></legend>
+
+					<div class="mb-5">
+						<input type="file" id="file" name="file" accept=".pdf" aria-label="File Upload" class="mt-1 p-2 w-full rounded border border-gray-300" />
+						<label for="file" class="block text-xs pt-2 font-medium text-gray-700">Note: Only CV in <span id="unique" class="font-bold">pdf</span> format is accepted.</label>
+						<div id="file_error" class="text-xs text-red-700"><span></span></div>
+					</div>
+				</fieldset>
+
+				<div class="mb-5">
+					<input type="checkbox" id="agree" name="agree" value="yes" onchange="toggleSubmitButton()" aria-label="Agree to share data" class="mt-1" />
+					<label for="agree" class="text-sm font-medium"> I agree to <span id="terms-link">terms and conditions</span></label>
+				</div>
+
+				<div class="buttons flex-col space-y-4">
+					<button type="submit" id="submit" disabled class="btn btn-active text-white bg-[#8A5A07] w-full hover:bg-[#004996]">
+						Submit Application
+						<svg id="loadingIcon" class="hidden animate-spin h-5 w-5 mx-2 text-white" fill="none" viewBox="0 0 24 24">
+							<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+							<path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 4.418 3.582 8 8 8v-4c-2.289 0-4.372-.93-5.906-2.418l1.812-1.813z"></path>
+						</svg>
+					</button>
+
+					<!-- <div class="continuelater">Are you unable to complete the form now? No worries. Complete it next time you visit this page.</div>
+					<button id="save" class="btn btn-outline w-full hover:bg-[#004996]">Save Form Data and Resume Later</button> -->
+				</div>
+			</form>
+		</div>
+
+		<div id="modal-container">
+			<div id="modal">
+				<span id="close-modal">&times;</span>
+				<!-- Your form goes here -->
+				<form>
+					<!-- Form fields go here -->
+					<p> I understand that company can keep my data in job database for future reference. </p>
+					<br />
+				</form>
+			</div>
+		</div>
+
+		<script>
+			// JavaScript to handle modal functionality
+			const modalContainer = document.getElementById("modal-container");
+			const termsLink = document.getElementById("terms-link");
+			const closeModal = document.getElementById("close-modal");
+
+			termsLink.addEventListener("click", () => {
+				modalContainer.style.display = "flex";
+			});
+
+			closeModal.addEventListener("click", () => {
+				modalContainer.style.display = "none";
+			});
+		</script>
+
+		<footer class="bg-[#8A5A07] py-4 text-white px-60">
+			<div class="container mx-auto flex flex-col space-y-4 md:flex-row p-4 justify-between items-center">
+				<!-- Social Icons -->
+				<div class="flex space-x-2">
+					<a href="https://www.facebook.com/hpsanjel" class="text-white hover:text-gray-400 transition duration-300">
+					        <span class="sr-only">Visit our Facebook page</span>
+
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+							<path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path>
+							<path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+						</svg>
+					</a>
+
+					<a href="https://www.youtube.com/@harisanjel" class="text-white hover:text-gray-400 transition duration-300">
+					    					        <span class="sr-only">Visit our Youtube channel</span>
+
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+							<path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"></path>
+							<path fill="#FFF" d="M20 31L20 17 32 24z"></path>
+						</svg>
+					</a>
+
+					<a href="https://www.linkedin.com/in/hpsanjel/" class="text-white hover:text-gray-400 transition duration-300">
+					    					        <span class="sr-only">Visit our LinkedIn page</span>
+
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+							<path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path>
+							<path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path>
+						</svg>
+					</a>
+				</div>
+
+				<!-- Copyright Line -->
+				<div class="text-center flex flex-col">
+					<div>&copy; 2023 Hari Prasad Sanjel.</div>
+					<div>All rights reserved.</div>
+				</div>
+			</div>
+		</footer>
+		<script>
+			document.getElementById("file").addEventListener("change", function () {
+				validateFile();
+			});
+
+			document.getElementById("file").addEventListener("blur", function () {
+				validateFile();
+			});
+
+			function validateFile() {
+				var fileInput = document.getElementById("file");
+				var errorMessage = document.getElementById("file_error").getElementsByTagName("span")[0];
+
+				if (fileInput.files.length === 0) {
+					errorMessage.textContent = "Please select your CV to upload.";
+				} else {
+					errorMessage.textContent = "";
+				}
+			}
+		</script>
+		<script>
+			const countryDropdown = document.getElementById("citizenship");
+
+			fetch("https://restcountries.com/v3.1/all")
+				.then((response) => response.json())
+				.then((data) => {
+					const countryNames = data.map((country) => ({
+						id: country.name.common.toLowerCase().replace(/ /g, "_"),
+						text: country.name.common,
+					}));
+
+					countryNames.sort((a, b) => a.text.localeCompare(b.text));
+
+					$(countryDropdown).select2({
+						data: countryNames,
+						placeholder: "Select a country",
+						allowClear: true,
+    formatResult: function format(country) { return country.text; }, 
+					});
+
+					$(countryDropdown)
+						.find(".select2-results__option")
+						.click(function () {
+							if ($(countryDropdown).hasClass("select2-container--open")) {
+								$(this).find("input").focus();
+							}
+						});
+				})
+				.catch((error) => console.error("Error fetching country data:", error));
+		</script>
+		<script>
+			document.getElementById("jobForm").addEventListener("submit", function (event) {
+				event.preventDefault();
+
+				// Get form data
+				const formData = new FormData(event.target);
+				const loadingIcon = document.getElementById("loadingIcon");
+				const submitBtn = document.getElementById("submit");
+
+				loadingIcon.classList.remove("hidden");
+				submitBtn.disabled = true;
+
+				setTimeout(function () {
+					loadingIcon.classList.add("hidden");
+					submitBtn.disabled = false;
+
+					const formObject = {};
+					formData.forEach((value, key) => {
+						formObject[key] = value;
+					});
+
+					localStorage.setItem("formData", JSON.stringify(formObject));
+
+					window.location.href = "confirmation.html";
+				}, 1500);
+			});
+		</script>
+		<script src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Job Application Form</title>
+		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+		<style>
+			@keyframes blink {
+				0% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+
+			.blinking-text {
+				animation: blink 0.5s infinite; /* You can adjust the duration as needed */
+			}
+		</style>
+	</head>
+	<body class="bg-pink-100">
+		<div class="container mx-auto py-8">
+			<form id="myForm" class="max-w-md mx-auto bg-yellow-700 p-6 rounded shadow-md" novalidate>
+				<div class="heading flex flex-col text-center p-5 bg-yellow-900 mb-5 font-bold text-red-700 gap-1">
+					<label class="block text-3xl text-gray-500 blinking-text">Job Application</label>
+					<label class="block text-sm m-1 p-1">Fill in the form with the details provided to you in a sheet of paper to apply for the job.</label>
+					<div class="flex pt-4 justify-between items-center">
+						<div>Position: <br />Data Analyst</div>
+						<div>Deadline: <br />24. oct 2023</div>
+					</div>
+				</div>
+				<div class="mb-4">
+					<label class="text-sm font-medium text-red-300 font-serif">Name:</label>
+					<input type="text" id="name" name="name" class="mt-1 p-2 w-full rounded border border-red-600" />
+				</div>
+
+				<div class="mb-4">
+					<label class="block text-sm font-medium text-red-300">Date of Birth:</label>
+					<input type="text" id="dob" name="dob" tabindex="3" required aria-label="Date of Birth" class="mt-1 p-2 w-full rounded border border-red-600 text-red-700" />
+				</div>
+
+				<div class="mb-4">
+					<label class="text-sm font-medium text-red-300 font-serif">Email:</label>
+					<input type="text" id="email" name="email" class="mt-1 p-2 w-full rounded border border-red-600" />
+				</div>
+
+				<div class="mb-4">
+					<label class="text-sm font-medium text-red-300 font-serif">Country:</label>
+					<input type="text" id="country" name="country" class="mt-1 p-2 w-full rounded border border-red-600" />
+				</div>
+
+				<div class="mb-4">
+					<label class="text-sm font-medium text-red-300 font-serif">Why are you motivated for this position?</label>
+					<textarea id="message" name="message" rows="4" class="mt-1 p-2 w-full rounded border border-red-600"></textarea>
+				</div>
+
+				<div class="mb-4">
+					<label class="text-sm font-medium text-red-300 font-serif">Upload your CV:</label>
+					<input type="file" id="file" name="file" tabindex="2" class="mt-1 p-2 w-full rounded border border-red-600" />
+				</div>
+
+				<div class="mb-4">
+					<label class="text-sm font-medium text-red-300 font-serif"> Gender: </label>
+					<div class="mt-2 space-x-4">
+						<input type="radio" id="male" name="gender" value="male" />
+						<label for="male" class="text-sm font-medium text-red-300 font-serif">Male</label>
+						<input type="radio" id="female" name="gender" value="female" />
+						<label for="female" class="text-sm font-medium text-red-300 font-serif">Female</label>
+					</div>
+				</div>
+
+				<div class="mb-4">
+					<label class="text-sm font-medium text-red-300 font-serif">Contact:</label>
+					<input type="text" id="contact" name="contact" tabindex="1" class="mt-1 p-2 w-full rounded border border-red-600" />
+				</div>
+
+				<div class="mb-4">
+					<input type="checkbox" id="subscribe" name="subscribe" value="yes" class="mt-1" />
+					<label class="text-sm font-medium text-red-300 font-serif"> I understand that company can keep my data in job database for future reference. </label>
+				</div>
+
+				<button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded font-serif">Submit</button>
+				<div id="feedbackLink" class="hidden m-2 text-lg text-white">
+					<h3>We have received your job application form.</h3>
+					<p class="text-sm">Now, kindly click the following link to fill out the feedback.</p>
+					<a class="text-sm underline" href="https://forms.gle/sj6SZ732of9wdatj8" id="googleFormLink">Click here to give Feedback</a>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			function showFeedbackLink() {
+				setTimeout(() => {
+					document.getElementById("feedbackLink").style.display = "block";
+				}, 2000);
+			}
+
+			document.getElementById("myForm").addEventListener("submit", function (event) {
+				event.preventDefault();
+
+				showFeedbackLink();
+			});
+		</script>
+	</body>
+</html>

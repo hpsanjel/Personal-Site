@@ -1,0 +1,115 @@
+[07-Apr-2023 14:12:47 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 11
+[07-Apr-2023 15:12:15 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'admin'@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[07-Apr-2023 15:13:39 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Sep-2023 17:05:45 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Sep-2023 17:05:59 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:16:11 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'admin'@'localhost' (using password: YES) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:20:56 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:20:56 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:20:59 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:20:59 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:21:00 UTC] PHP Warning:  mysqli_connect(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:21:00 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:28:40 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:28:41 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:28:44 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:28:46 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:32:45 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:32:46 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:32:48 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:35:25 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:35:27 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:38:52 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:38:54 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:38:56 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:46:05 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 4
+[13-Oct-2023 11:49:39 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:49:39 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:50:19 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:50:19 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:50:22 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:50:22 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:51:09 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:51:09 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:51:10 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:51:10 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:51:12 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:51:12 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:51:27 UTC] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:51:27 UTC] PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/harisanj/public_html/rg/includes/config.php on line 10
+[13-Oct-2023 11:58:25 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:49:58 UTC] PHP Warning:  Undefined variable $DB_HOST in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:49:58 UTC] PHP Warning:  Undefined variable $DB_USER in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:49:58 UTC] PHP Warning:  Undefined variable $DB_PASS in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:49:58 UTC] PHP Warning:  Undefined variable $DB_NAME in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:49:58 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/includes/config.php(3): mysqli_connect(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 /home/harisanj/public_html/rg/index.php(3): include_once('/home/harisanj/...')
+#2 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:50:10 UTC] PHP Warning:  Undefined variable $DB_HOST in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:50:10 UTC] PHP Warning:  Undefined variable $DB_USER in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:50:10 UTC] PHP Warning:  Undefined variable $DB_PASS in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:50:10 UTC] PHP Warning:  Undefined variable $DB_NAME in /home/harisanj/public_html/rg/includes/config.php on line 3
+[20-Dec-2023 22:50:10 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/includes/config.php(3): mysqli_connect(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 /home/harisanj/public_html/rg/index.php(3): include_once('/home/harisanj/...')
+#2 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[30-Apr-2024 07:12:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[30-Apr-2024 07:13:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[30-Apr-2024 07:13:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[30-Apr-2024 08:03:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[30-Apr-2024 08:05:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[30-Apr-2024 08:05:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[30-Apr-2024 08:14:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[30-Apr-2024 08:18:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[30-Apr-2024 08:18:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[26-Jul-2024 14:15:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3
+[26-Jul-2024 14:15:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home/harisanj/public_html/rg/includes/config.php:3
+Stack trace:
+#0 /home/harisanj/public_html/rg/index.php(3): include_once()
+#1 {main}
+  thrown in /home/harisanj/public_html/rg/includes/config.php on line 3

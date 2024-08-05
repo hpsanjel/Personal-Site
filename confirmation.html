@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Confirmation Page</title>
+		<!-- Include Tailwind CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+	</head>
+	<body class="bg-gray-100 p-4 flex items-center justify-center h-screen w-full">
+		<div class="dialog-box max-w-md mx-auto bg-white p-6 relative rounded shadow-lg">
+			<span id="close-icon" class="close-icon absolute top-5 right-5 cursor-pointer bg-red-100 hover:bg-red-300 pr-1 pl-1 rounded-md">&times</span>
+			<div class="mb-4">
+				<h1 class="text-2xl font-semibold mb-4" id="userName">Thank you!</h1>
+
+				<p class="text-green-600 font-semibold">We have received your job application successfully.</p>
+				<p class="text-black-600 font-semibold mt-2">We will contact you within two weeks from now.</p>
+				<br />
+				<hr />
+				<div id="feedbackLink" class="m-2 text-lg text-black">
+					<p class="text-sm">Now, we would like to request you to fill out the feedback form by visiting the following link.</p>
+					<a class="text-lg underline" href="https://forms.gle/EaTkQw1u24zCTpMj8" id="googleFormLink">Click here to give Feedback</a>
+				</div>
+				<hr />
+				<br />
+				<p class="text-black-600 justify-center">Meanwhile, you can follow us on our social media.</p>
+				<div class="flex space-x-4">
+					<a href="https://www.facebook.com/hpsanjel" class="text-white hover:text-gray-400 transition duration-300">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+							<path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path>
+							<path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+						</svg>
+					</a>
+
+					<a href="https://www.youtube.com/@harisanjel" class="text-white hover:text-gray-400 transition duration-300">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+							<path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"></path>
+							<path fill="#FFF" d="M20 31L20 17 32 24z"></path>
+						</svg>
+					</a>
+
+					<a href="https://www.linkedin.com/in/hpsanjel/" class="text-white hover:text-gray-400 transition duration-300">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+							<path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path>
+							<path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path>
+						</svg>
+					</a>
+				</div>
+				<!-- <div class="grid grid-cols-3 gap-4"><a href="#" class="bg-blue-100 p-2 text-center mt-2 hover:bg-blue-300">Facebook</a> <a href="#" class="bg-red-100 p-2 text-center mt-2 hover:bg-red-300">Youtube</a> <a href="#" class="bg-purple-100 p-2 text-center mt-2 hover:bg-purple-300">Instagram</a></div> -->
+				<!-- <div id="formData" class="mt-2 text-gray-700"></div> -->
+			</div>
+		</div>
+		<script>
+			// Get references to the close icon and the dialog box
+			const closeIcon = document.getElementById("close-icon");
+			const username = document.getElementById("userName");
+			const dialogBox = document.querySelector(".dialog-box");
+			const storedFormData = localStorage.getItem("formData");
+
+			// Add an event listener to the close icon
+			closeIcon.addEventListener("click", function () {
+				// Hide the dialog box
+				dialogBox.style.display = "none";
+
+				// Redirect to the home page (replace "home.html" with the actual URL)
+				window.location.href = "accessible_form.html";
+			});
+			if (storedFormData) {
+				// Parsing the JSON string back to an object
+				const formData = JSON.parse(storedFormData);
+
+				// Accessing the 'fname' key
+				const fnameValue = formData.fname;
+
+				// Assuming you have an element with an ID 'fnameDisplay' to display the fname value
+
+				// Displaying the fname value on the confirmation page
+				username.textContent = `Thank you, ${fnameValue}`;
+			} else {
+				// Handle the case where formData is not found in localStorage
+				username.textContent = `Thank you!`;
+			}
+		</script>
+	</body>
+</html>
